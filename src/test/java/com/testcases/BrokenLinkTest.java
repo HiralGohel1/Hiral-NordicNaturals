@@ -1,26 +1,19 @@
 package com.testcases;
 
-import java.io.File;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URISyntaxException;
 import java.net.URL;
-import java.nio.file.Path;
-import java.time.Duration;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
-
-import org.omg.CORBA.DynAnyPackage.Invalid;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class BrokenLinkTest {
 
-	
 	private static WebDriver driver = null;
 	private static int invalidUrlCount;
 	private int brokenLinkCount;
@@ -29,7 +22,6 @@ public class BrokenLinkTest {
 	String homePage = "https://www.nordicnaturals.com";
 
 	@Test
-
 	public void FindBrokenLinksTest() {
 
 		System.setProperty("webdriver.chrome.driver", ".\\chromedriver.exe");
@@ -89,7 +81,6 @@ public class BrokenLinkTest {
 			}
 
 			else {
-				// System.out.println(url + " - " + htttpUrlConnection.getResponseMessage() );
 				workingLinkCount++;
 			}
 
