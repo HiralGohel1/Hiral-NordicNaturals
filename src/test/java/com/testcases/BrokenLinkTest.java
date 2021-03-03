@@ -10,6 +10,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.Assert;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.Test;
 
 public class BrokenLinkTest {
@@ -49,8 +51,13 @@ public class BrokenLinkTest {
 		System.out.println("Total number of working links are: " + workingLinkCount);
 		System.out.println("Total number of invalid links are: " + invalidUrlCount);
 
-		driver.quit();
+		Assert.assertEquals(brokenLinkCount, 0);
 
+	}
+
+	@AfterTest
+	public void closeDriver() {
+		driver.close();
 	}
 
 	public static boolean isUrlValid(String url) {
